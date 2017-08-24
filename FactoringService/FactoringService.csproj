@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86410453-4876-45E4-879F-4DD8009DC5FD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FactoringService</RootNamespace>
+    <AssemblyName>FactoringService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Service1.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Domain\BussinessType.cs" />
+    <Compile Include="Core\Domain\BussinessTypeTranslate.cs" />
+    <Compile Include="Core\Domain\Company.cs" />
+    <Compile Include="Core\Domain\Country.cs" />
+    <Compile Include="Core\Domain\CountryTranslate.cs" />
+    <Compile Include="Core\Domain\DocumentType.cs" />
+    <Compile Include="Core\Domain\DocumentTypeTranslate.cs" />
+    <Compile Include="Core\Domain\PersonStatus.cs" />
+    <Compile Include="Core\Domain\PersonStatusTranslate.cs" />
+    <Compile Include="Core\Domain\RepresentivePerson.cs" />
+    <Compile Include="Core\Domain\SocialStatus.cs" />
+    <Compile Include="Core\Domain\SocialStatusTranslate.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IBussinessTypeRepository.cs" />
+    <Compile Include="Core\Repositories\ICompanyRepository.cs" />
+    <Compile Include="Core\Repositories\ICountryRepository.cs" />
+    <Compile Include="Core\Repositories\IDocumentTypeRepository.cs" />
+    <Compile Include="Core\Repositories\IPersonStatusRepository.cs" />
+    <Compile Include="Core\Repositories\IRepository.cs" />
+    <Compile Include="Core\Repositories\IRepresentivePersonRepository.cs" />
+    <Compile Include="Core\Repositories\ISocialStatusRepository.cs" />
+    <Compile Include="Migrations\201708221323542_AddedUsersTable.cs" />
+    <Compile Include="Migrations\201708221323542_AddedUsersTable.Designer.cs">
+      <DependentUpon>201708221323542_AddedUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708221411381_OverrideUSerFirstNameAndLastNameLength.cs" />
+    <Compile Include="Migrations\201708221411381_OverrideUSerFirstNameAndLastNameLength.Designer.cs">
+      <DependentUpon>201708221411381_OverrideUSerFirstNameAndLastNameLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231308178_AddedCompaniesTable.cs" />
+    <Compile Include="Migrations\201708231308178_AddedCompaniesTable.Designer.cs">
+      <DependentUpon>201708231308178_AddedCompaniesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231332316_AddedBussinessTypesTable.cs" />
+    <Compile Include="Migrations\201708231332316_AddedBussinessTypesTable.Designer.cs">
+      <DependentUpon>201708231332316_AddedBussinessTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231416243_AddedRepresentivePeopleTable.cs" />
+    <Compile Include="Migrations\201708231416243_AddedRepresentivePeopleTable.Designer.cs">
+      <DependentUpon>201708231416243_AddedRepresentivePeopleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231440344_AddedCountriesTable.cs" />
+    <Compile Include="Migrations\201708231440344_AddedCountriesTable.Designer.cs">
+      <DependentUpon>201708231440344_AddedCountriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231452281_RemovedTitleFromCountries.cs" />
+    <Compile Include="Migrations\201708231452281_RemovedTitleFromCountries.Designer.cs">
+      <DependentUpon>201708231452281_RemovedTitleFromCountries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231500532_AddedCountriesTranslatesTable.cs" />
+    <Compile Include="Migrations\201708231500532_AddedCountriesTranslatesTable.Designer.cs">
+      <DependentUpon>201708231500532_AddedCountriesTranslatesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231502341_AddedCountryIdToCountryTranslates.cs" />
+    <Compile Include="Migrations\201708231502341_AddedCountryIdToCountryTranslates.Designer.cs">
+      <DependentUpon>201708231502341_AddedCountryIdToCountryTranslates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231506009_DeletedTitleFromBusinessType.cs" />
+    <Compile Include="Migrations\201708231506009_DeletedTitleFromBusinessType.Designer.cs">
+      <DependentUpon>201708231506009_DeletedTitleFromBusinessType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231508507_AddedbusinessTypeTranslatesTable.cs" />
+    <Compile Include="Migrations\201708231508507_AddedbusinessTypeTranslatesTable.Designer.cs">
+      <DependentUpon>201708231508507_AddedbusinessTypeTranslatesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231521132_DeletedBussinessTypeId.cs" />
+    <Compile Include="Migrations\201708231521132_DeletedBussinessTypeId.Designer.cs">
+      <DependentUpon>201708231521132_DeletedBussinessTypeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231523078_DeletedBusinesstypeTable.cs" />
+    <Compile Include="Migrations\201708231523078_DeletedBusinesstypeTable.Designer.cs">
+      <DependentUpon>201708231523078_DeletedBusinesstypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231523577_DeletedCountryIdFromTranslatesTable.cs" />
+    <Compile Include="Migrations\201708231523577_DeletedCountryIdFromTranslatesTable.Designer.cs">
+      <DependentUpon>201708231523577_DeletedCountryIdFromTranslatesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231525139_DeletedCountriesTable.cs" />
+    <Compile Include="Migrations\201708231525139_DeletedCountriesTable.Designer.cs">
+      <DependentUpon>201708231525139_DeletedCountriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708240904045_AddedSocialStatusTranslateTable.cs" />
+    <Compile Include="Migrations\201708240904045_AddedSocialStatusTranslateTable.Designer.cs">
+      <DependentUpon>201708240904045_AddedSocialStatusTranslateTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708240944542_AddedPersonStatusTranslatetable.cs" />
+    <Compile Include="Migrations\201708240944542_AddedPersonStatusTranslatetable.Designer.cs">
+      <DependentUpon>201708240944542_AddedPersonStatusTranslatetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241003160_AddedDocumentTypeTranslatesTable.cs" />
+    <Compile Include="Migrations\201708241003160_AddedDocumentTypeTranslatesTable.Designer.cs">
+      <DependentUpon>201708241003160_AddedDocumentTypeTranslatesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241028040_OverrideCompaniesTableConventions.cs" />
+    <Compile Include="Migrations\201708241028040_OverrideCompaniesTableConventions.Designer.cs">
+      <DependentUpon>201708241028040_OverrideCompaniesTableConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241030046_OverrideConventions.cs" />
+    <Compile Include="Migrations\201708241030046_OverrideConventions.Designer.cs">
+      <DependentUpon>201708241030046_OverrideConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241032094_OverrideConventions2.cs" />
+    <Compile Include="Migrations\201708241032094_OverrideConventions2.Designer.cs">
+      <DependentUpon>201708241032094_OverrideConventions2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241137582_OverrideCountryTranslateConventions.cs" />
+    <Compile Include="Migrations\201708241137582_OverrideCountryTranslateConventions.Designer.cs">
+      <DependentUpon>201708241137582_OverrideCountryTranslateConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241140426_OverrideBussinessTypeTranslateConventions.cs" />
+    <Compile Include="Migrations\201708241140426_OverrideBussinessTypeTranslateConventions.Designer.cs">
+      <DependentUpon>201708241140426_OverrideBussinessTypeTranslateConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241142076_OverrideBussinessTypeTranslateConventions1.cs" />
+    <Compile Include="Migrations\201708241142076_OverrideBussinessTypeTranslateConventions1.Designer.cs">
+      <DependentUpon>201708241142076_OverrideBussinessTypeTranslateConventions1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241146362_OverrideDocumentTypeConfigurations.cs" />
+    <Compile Include="Migrations\201708241146362_OverrideDocumentTypeConfigurations.Designer.cs">
+      <DependentUpon>201708241146362_OverrideDocumentTypeConfigurations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241150050_OverridePersonStatusTranslateConfigurations.cs" />
+    <Compile Include="Migrations\201708241150050_OverridePersonStatusTranslateConfigurations.Designer.cs">
+      <DependentUpon>201708241150050_OverridePersonStatusTranslateConfigurations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241152536_OverrideSocialStatusTranslateConventions.cs" />
+    <Compile Include="Migrations\201708241152536_OverrideSocialStatusTranslateConventions.Designer.cs">
+      <DependentUpon>201708241152536_OverrideSocialStatusTranslateConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241201328_OverrideRepresentivePeopleConfigurations.cs" />
+    <Compile Include="Migrations\201708241201328_OverrideRepresentivePeopleConfigurations.Designer.cs">
+      <DependentUpon>201708241201328_OverrideRepresentivePeopleConfigurations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241205296_ChangedDocumentDateOfIssueInRepresentivePeopleTable.cs" />
+    <Compile Include="Migrations\201708241205296_ChangedDocumentDateOfIssueInRepresentivePeopleTable.Designer.cs">
+      <DependentUpon>201708241205296_ChangedDocumentDateOfIssueInRepresentivePeopleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241209492_MakePersonRegistrationNullableINRepresentivePeople.cs" />
+    <Compile Include="Migrations\201708241209492_MakePersonRegistrationNullableINRepresentivePeople.Designer.cs">
+      <DependentUpon>201708241209492_MakePersonRegistrationNullableINRepresentivePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241216529_AddedBusinessTypeTable.cs" />
+    <Compile Include="Migrations\201708241216529_AddedBusinessTypeTable.Designer.cs">
+      <DependentUpon>201708241216529_AddedBusinessTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241218233_AddedBussinessTypeIdToTranslationEntity.cs" />
+    <Compile Include="Migrations\201708241218233_AddedBussinessTypeIdToTranslationEntity.Designer.cs">
+      <DependentUpon>201708241218233_AddedBussinessTypeIdToTranslationEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241220080_AddedCountriesTable1.cs" />
+    <Compile Include="Migrations\201708241220080_AddedCountriesTable1.Designer.cs">
+      <DependentUpon>201708241220080_AddedCountriesTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241221036_AddedCountryIdToTranslationEntity.cs" />
+    <Compile Include="Migrations\201708241221036_AddedCountryIdToTranslationEntity.Designer.cs">
+      <DependentUpon>201708241221036_AddedCountryIdToTranslationEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241222446_AddedDocumentTypesTable.cs" />
+    <Compile Include="Migrations\201708241222446_AddedDocumentTypesTable.Designer.cs">
+      <DependentUpon>201708241222446_AddedDocumentTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241223531_AddedDocumentTypeIdToTranslationEntity.cs" />
+    <Compile Include="Migrations\201708241223531_AddedDocumentTypeIdToTranslationEntity.Designer.cs">
+      <DependentUpon>201708241223531_AddedDocumentTypeIdToTranslationEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241225447_AddedPersonStatusesTable.cs" />
+    <Compile Include="Migrations\201708241225447_AddedPersonStatusesTable.Designer.cs">
+      <DependentUpon>201708241225447_AddedPersonStatusesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241228439_AddedPersonStatusIdToTranslationEntoty.cs" />
+    <Compile Include="Migrations\201708241228439_AddedPersonStatusIdToTranslationEntoty.Designer.cs">
+      <DependentUpon>201708241228439_AddedPersonStatusIdToTranslationEntoty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241232460_AddSocialStatusesTable.cs" />
+    <Compile Include="Migrations\201708241232460_AddSocialStatusesTable.Designer.cs">
+      <DependentUpon>201708241232460_AddSocialStatusesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241237259_DeletedUsersTable.cs" />
+    <Compile Include="Migrations\201708241237259_DeletedUsersTable.Designer.cs">
+      <DependentUpon>201708241237259_DeletedUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241238584_AddedBussinessTypeIdToCompanyTable.cs" />
+    <Compile Include="Migrations\201708241238584_AddedBussinessTypeIdToCompanyTable.Designer.cs">
+      <DependentUpon>201708241238584_AddedBussinessTypeIdToCompanyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241240509_AddedRepresentivePeopleIdToCompaniesTable.cs" />
+    <Compile Include="Migrations\201708241240509_AddedRepresentivePeopleIdToCompaniesTable.Designer.cs">
+      <DependentUpon>201708241240509_AddedRepresentivePeopleIdToCompaniesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241243050_RenamedCompanyColumns.cs" />
+    <Compile Include="Migrations\201708241243050_RenamedCompanyColumns.Designer.cs">
+      <DependentUpon>201708241243050_RenamedCompanyColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241244597_RenamedBussinessTypetranslationColumn.cs" />
+    <Compile Include="Migrations\201708241244597_RenamedBussinessTypetranslationColumn.Designer.cs">
+      <DependentUpon>201708241244597_RenamedBussinessTypetranslationColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241246137_AddedSocialStatusToTranslationENtity.cs" />
+    <Compile Include="Migrations\201708241246137_AddedSocialStatusToTranslationENtity.Designer.cs">
+      <DependentUpon>201708241246137_AddedSocialStatusToTranslationENtity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241247285_RenamedCountryTranslateColumn.cs" />
+    <Compile Include="Migrations\201708241247285_RenamedCountryTranslateColumn.Designer.cs">
+      <DependentUpon>201708241247285_RenamedCountryTranslateColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241248167_RenamedDocumentTypeTableColumn.cs" />
+    <Compile Include="Migrations\201708241248167_RenamedDocumentTypeTableColumn.Designer.cs">
+      <DependentUpon>201708241248167_RenamedDocumentTypeTableColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241249188_RenamedPersonStatusColumn.cs" />
+    <Compile Include="Migrations\201708241249188_RenamedPersonStatusColumn.Designer.cs">
+      <DependentUpon>201708241249188_RenamedPersonStatusColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\EntityConfigurations\BussinessTypeTranslateConfigurations.cs" />
+    <Compile Include="Persistence\EntityConfigurations\CompanyConfigurations.cs" />
+    <Compile Include="Persistence\EntityConfigurations\CountryTranslateConfigurations.cs" />
+    <Compile Include="Persistence\EntityConfigurations\DocumentTypeTranslateConfigurations.cs" />
+    <Compile Include="Persistence\EntityConfigurations\PersonStatusTranslateConfigurations.cs" />
+    <Compile Include="Persistence\EntityConfigurations\RepresentivePeopleConfigurations.cs" />
+    <Compile Include="Persistence\EntityConfigurations\SocialStatusTranslateConfigurations.cs" />
+    <Compile Include="Persistence\FactoringContext.cs" />
+    <Compile Include="Migrations\201708221009039_InitialMigration.cs" />
+    <Compile Include="Migrations\201708221009039_InitialMigration.Designer.cs">
+      <DependentUpon>201708221009039_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\Repositories\BussinessTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\CompanyRepository.cs" />
+    <Compile Include="Persistence\Repositories\CountryRepository.cs" />
+    <Compile Include="Persistence\Repositories\DocumentTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\PersonStatusRepository.cs" />
+    <Compile Include="Persistence\Repositories\Repository.cs" />
+    <Compile Include="Persistence\Repositories\RepresentivePeopleRepository.cs" />
+    <Compile Include="Persistence\Repositories\SocialStatusRepository.cs" />
+    <Compile Include="Persistence\UnitOfWork.cs" />
+    <Compile Include="Service1.svc.cs">
+      <DependentUpon>Service1.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IService1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708221009039_InitialMigration.resx">
+      <DependentUpon>201708221009039_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221323542_AddedUsersTable.resx">
+      <DependentUpon>201708221323542_AddedUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708221411381_OverrideUSerFirstNameAndLastNameLength.resx">
+      <DependentUpon>201708221411381_OverrideUSerFirstNameAndLastNameLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231308178_AddedCompaniesTable.resx">
+      <DependentUpon>201708231308178_AddedCompaniesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231332316_AddedBussinessTypesTable.resx">
+      <DependentUpon>201708231332316_AddedBussinessTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231416243_AddedRepresentivePeopleTable.resx">
+      <DependentUpon>201708231416243_AddedRepresentivePeopleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231440344_AddedCountriesTable.resx">
+      <DependentUpon>201708231440344_AddedCountriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231452281_RemovedTitleFromCountries.resx">
+      <DependentUpon>201708231452281_RemovedTitleFromCountries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231500532_AddedCountriesTranslatesTable.resx">
+      <DependentUpon>201708231500532_AddedCountriesTranslatesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231502341_AddedCountryIdToCountryTranslates.resx">
+      <DependentUpon>201708231502341_AddedCountryIdToCountryTranslates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231506009_DeletedTitleFromBusinessType.resx">
+      <DependentUpon>201708231506009_DeletedTitleFromBusinessType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231508507_AddedbusinessTypeTranslatesTable.resx">
+      <DependentUpon>201708231508507_AddedbusinessTypeTranslatesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231521132_DeletedBussinessTypeId.resx">
+      <DependentUpon>201708231521132_DeletedBussinessTypeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231523078_DeletedBusinesstypeTable.resx">
+      <DependentUpon>201708231523078_DeletedBusinesstypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231523577_DeletedCountryIdFromTranslatesTable.resx">
+      <DependentUpon>201708231523577_DeletedCountryIdFromTranslatesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231525139_DeletedCountriesTable.resx">
+      <DependentUpon>201708231525139_DeletedCountriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708240904045_AddedSocialStatusTranslateTable.resx">
+      <DependentUpon>201708240904045_AddedSocialStatusTranslateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708240944542_AddedPersonStatusTranslatetable.resx">
+      <DependentUpon>201708240944542_AddedPersonStatusTranslatetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241003160_AddedDocumentTypeTranslatesTable.resx">
+      <DependentUpon>201708241003160_AddedDocumentTypeTranslatesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241028040_OverrideCompaniesTableConventions.resx">
+      <DependentUpon>201708241028040_OverrideCompaniesTableConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241030046_OverrideConventions.resx">
+      <DependentUpon>201708241030046_OverrideConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241032094_OverrideConventions2.resx">
+      <DependentUpon>201708241032094_OverrideConventions2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241137582_OverrideCountryTranslateConventions.resx">
+      <DependentUpon>201708241137582_OverrideCountryTranslateConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241140426_OverrideBussinessTypeTranslateConventions.resx">
+      <DependentUpon>201708241140426_OverrideBussinessTypeTranslateConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241142076_OverrideBussinessTypeTranslateConventions1.resx">
+      <DependentUpon>201708241142076_OverrideBussinessTypeTranslateConventions1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241146362_OverrideDocumentTypeConfigurations.resx">
+      <DependentUpon>201708241146362_OverrideDocumentTypeConfigurations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241150050_OverridePersonStatusTranslateConfigurations.resx">
+      <DependentUpon>201708241150050_OverridePersonStatusTranslateConfigurations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241152536_OverrideSocialStatusTranslateConventions.resx">
+      <DependentUpon>201708241152536_OverrideSocialStatusTranslateConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241201328_OverrideRepresentivePeopleConfigurations.resx">
+      <DependentUpon>201708241201328_OverrideRepresentivePeopleConfigurations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241205296_ChangedDocumentDateOfIssueInRepresentivePeopleTable.resx">
+      <DependentUpon>201708241205296_ChangedDocumentDateOfIssueInRepresentivePeopleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241209492_MakePersonRegistrationNullableINRepresentivePeople.resx">
+      <DependentUpon>201708241209492_MakePersonRegistrationNullableINRepresentivePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241216529_AddedBusinessTypeTable.resx">
+      <DependentUpon>201708241216529_AddedBusinessTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241218233_AddedBussinessTypeIdToTranslationEntity.resx">
+      <DependentUpon>201708241218233_AddedBussinessTypeIdToTranslationEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241220080_AddedCountriesTable1.resx">
+      <DependentUpon>201708241220080_AddedCountriesTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241221036_AddedCountryIdToTranslationEntity.resx">
+      <DependentUpon>201708241221036_AddedCountryIdToTranslationEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241222446_AddedDocumentTypesTable.resx">
+      <DependentUpon>201708241222446_AddedDocumentTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241223531_AddedDocumentTypeIdToTranslationEntity.resx">
+      <DependentUpon>201708241223531_AddedDocumentTypeIdToTranslationEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241225447_AddedPersonStatusesTable.resx">
+      <DependentUpon>201708241225447_AddedPersonStatusesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241228439_AddedPersonStatusIdToTranslationEntoty.resx">
+      <DependentUpon>201708241228439_AddedPersonStatusIdToTranslationEntoty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241232460_AddSocialStatusesTable.resx">
+      <DependentUpon>201708241232460_AddSocialStatusesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241237259_DeletedUsersTable.resx">
+      <DependentUpon>201708241237259_DeletedUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241238584_AddedBussinessTypeIdToCompanyTable.resx">
+      <DependentUpon>201708241238584_AddedBussinessTypeIdToCompanyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241240509_AddedRepresentivePeopleIdToCompaniesTable.resx">
+      <DependentUpon>201708241240509_AddedRepresentivePeopleIdToCompaniesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241243050_RenamedCompanyColumns.resx">
+      <DependentUpon>201708241243050_RenamedCompanyColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241244597_RenamedBussinessTypetranslationColumn.resx">
+      <DependentUpon>201708241244597_RenamedBussinessTypetranslationColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241246137_AddedSocialStatusToTranslationENtity.resx">
+      <DependentUpon>201708241246137_AddedSocialStatusToTranslationENtity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241247285_RenamedCountryTranslateColumn.resx">
+      <DependentUpon>201708241247285_RenamedCountryTranslateColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241248167_RenamedDocumentTypeTableColumn.resx">
+      <DependentUpon>201708241248167_RenamedDocumentTypeTableColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241249188_RenamedPersonStatusColumn.resx">
+      <DependentUpon>201708241249188_RenamedPersonStatusColumn.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3773</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3773/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
